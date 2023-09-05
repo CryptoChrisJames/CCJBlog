@@ -2,14 +2,34 @@ import markdown
 import os
 import blog_scripts.data
 
+def convert_blog(blog, table_name, blog_title):
+    blog_file = os.path.join(os.path.dirname(__file__), '../blogs/' + table_name + '/' + blog)
+    with open(blog_file, 'r') as f:
+        blog_text = f.read()
+    blog_html = markdown.markdown(blog_text)
+    converted_blog = os.path.join(os.path.dirname(__file__), '../static/content/' 
+                                    + table_name + '/' 
+                                    + blog_title + '.html')
+    absolute_converted_blog = os.path.abspath(converted_blog)
+    with open(absolute_converted_blog, 'w') as f:
+        f.write(blog_html)
+    return converted_blog
+
+    # #Insert the blog into the database
+    # db = blog_scripts.data.get_db(os.path.join(os.path.dirname(__file__), '../db/blogs.db'))
+    # cur = db.cursor()
+    # cur.execute("INSERT INTO " + table_name + " (name, html) VALUES (?, ?)", (blog, blog_html))
+    # db.commit()
+
 def convert_blogs_to_html(blogs, db, table_name):
     for blog in blogs:
         cur = db.cursor()
         cur.execute("SELECT * FROM " + table_name + " WHERE name=? LIMIT 1", (blog,))
         row = cur.fetchone()
         if row is None:
-            print("Blog " + blog + " not found in database")
-            continue
+            print("Converting blog " + blog + " to HTML...")
+            blog_title = blog.split('.')[0] + "." + blog.split('.')[1]
+            converted_blog = convert_blog(blog, table_name, blog_title)
         else:
             print("Blog " + blog + " has been converted to HTML.")
 
