@@ -3,5 +3,6 @@
         "./ccj-blog/Cargo.toml",
         "./ccj-blog/Cargo.toml",
         "./ccj-blog/Cargo.toml"
-    ]
+    ],
+    "nuxt.isNuxtApp": false
 }
