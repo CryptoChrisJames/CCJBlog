@@ -7,11 +7,13 @@ use rocket_dyn_templates::Template;
 
 mod home;
 mod admin;
+mod domain;
+mod repo;
 
 #[launch]
 fn rocket() -> _ {
     rocket::build()
         .mount("/static", FileServer::from("static"))
-        .mount("/", routes![home::index, admin::login])
+        .mount("/", routes![home::index, admin::login, admin::create])
         .attach(Template::fairing())
 }
