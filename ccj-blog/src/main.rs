@@ -14,6 +14,6 @@ mod repo;
 fn rocket() -> _ {
     rocket::build()
         .mount("/static", FileServer::from("static"))
-        .mount("/", routes![home::index, admin::login, admin::create])
+        .mount("/", routes![home::index, admin::admin, admin::login])
         .attach(Template::fairing())
 }
