@@ -11,14 +11,14 @@ pub fn login() -> Template {
     Template::render("login", &context)
 }
 
-// #[get("/admin/create/<username>/<password>")]
-// pub fn create(username: &str, password: &str) -> Status {
-//     let hashed = hash(password, DEFAULT_COST).unwrap();
-//     let newUser = User::new(username, &hashed);
-//     let userRepo = UserRepo { user: newUser };
-//     let result = userRepo.create();
-//     if result {
-//         return Status::Created;
-//     }
-//     Status::InternalServerError
-// }
+#[get("/admin/create/<username>/<password>")]
+pub fn create(username: &str, password: &str) -> Status {
+    let hashed = hash(password, DEFAULT_COST).unwrap();
+    let newUser = User::new(username, &hashed);
+    let userRepo = UserRepo { user: newUser };
+    let result = userRepo.create();
+    if result {
+        return Status::Created;
+    }
+    Status::InternalServerError
+}

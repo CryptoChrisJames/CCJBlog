@@ -2,7 +2,9 @@
     "rust-analyzer.linkedProjects": [
         "./ccj-blog/Cargo.toml",
         "./ccj-blog/Cargo.toml",
+        "./ccj-blog/Cargo.toml",
         "./ccj-blog/Cargo.toml"
     ],
-    "nuxt.isNuxtApp": false
+    "nuxt.isNuxtApp": false,
+    "rust-analyzer.showUnlinkedFileNotification": false
 }
