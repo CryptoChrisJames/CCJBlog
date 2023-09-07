@@ -11,7 +11,7 @@ pub struct UserRepo {
 }
 
 impl UserRepo {
-    pub fn get(&self) -> Result<User, rusqlite::Error> {
+    pub fn get(&self) -> Option<User, rusqlite::Error> {
         let db = getDb();
         let mut stmt = &db.prepare("SELECT * FROM admin WHERE username=?").unwrap();
         let existing_user: Result<User, rusqlite::Error> = stmt.query_row(&[&self.user.username], |row| {

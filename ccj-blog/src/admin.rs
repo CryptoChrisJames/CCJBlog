@@ -14,7 +14,7 @@ struct Login {
 }
 
 #[post("/admin/login", data = "<login>")]
-pub fn login(login: Form<Login>) -> Result<Template, Status> {
+pub fn login(login: Form<Login>) -> Template {
     let loginInfo = login.into_inner();
     let pwHash = hash(loginInfo.password, DEFAULT_COST).unwrap();
     let user = User::new(&loginInfo.username, &pwHash);
