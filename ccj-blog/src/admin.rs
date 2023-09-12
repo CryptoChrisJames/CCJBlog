@@ -62,16 +62,15 @@ pub fn admin() -> Template {
 //     Status::InternalServerError
 // }
 
-fn getDb() -> Connection {
+fn getDb() -> Connection { 
     return Connection::open("./db/ccj-blog.db").unwrap();
 }
 
-fn authenticate(authUsername:&str, authPassword: &str) -> bool {
+fn authenticate(authUsername: &String, authPassword: &String) -> bool {
     let existing_user: UserResult = get_user(authUsername);
     match existing_user {
-        UserResult::User(username, password) => {
-            let hashed = hash(authPassword, DEFAULT_COST).unwrap();
-            match verify(hashed, &password) {
+        UserResult::User(username, hash) => {
+            match verify(&authPassword, &hash) {
                 Ok(valid) => valid,
                 Err(e) => {
                     println!("{:?}", e);
@@ -86,17 +85,17 @@ fn authenticate(authUsername:&str, authPassword: &str) -> bool {
     }
 }
 
-fn get_user(username:&str) -> UserResult {
+fn get_user(username: &String) -> UserResult {
     let db = getDb();
-    let stmt = &mut db.prepare("SELECT * FROM admin WHERE username=?").unwrap();
+    let stmt = &mut db.prepare("SELECT username, password FROM admin WHERE username=?").unwrap();
     let existing_user = match stmt.query_row(&[&username], |row| {
-        Ok(((row.get(0)?, row.get(1)?)))
+        Ok((row.get(0)?, row.get(1)?))
     }) {
         Ok(user) => {
             return UserResult::User(user.0, user.1);
         },
         Err(rusqlite::Error::QueryReturnedNoRows) => UserResult::NotFound("User not found".into()),
-        Err(_) => UserResult::NotFound("User not found".into()),  // Treat other errors as "not found"
+        Err(e) => UserResult::NotFound(e.to_string()),  // Treat other errors as "not found"
     };
     existing_user
 }
