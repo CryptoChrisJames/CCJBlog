@@ -62,7 +62,7 @@ pub fn admin() -> Template {
 //     Status::InternalServerError
 // }
 
-fn getDb() -> Connection { 
+fn getDb() -> Connection {
     return Connection::open("./db/ccj-blog.db").unwrap();
 }
 

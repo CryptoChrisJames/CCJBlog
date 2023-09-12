@@ -7,12 +7,24 @@
         <title>CCJ - Admin</title>
     </head>
     <body>
-        <form hx-post="/admin/login" hx-target="this" hx-swap="outerHTML">
+        <form id="login-form" hx-post="/admin/login" hx-target="this" hx-swap="outerHTML">
             <label for="username">Username</label>
             <input type="text" name="username" id="username" required>
             <label for="password">Password</label>
             <input type="password" name="password" id="password" required>
             <button type="submit">Login</button>
         </form>
+        <script>
+            document.getElementById("login-form").addEventListener('htmx:afterRequest', function(event) {
+                // Check the status of the response
+                if(event.detail.xhr.status === 401 || event.detail.xhr.status === 404) {
+                    // Handle 400 error
+                    alert("Invalid login, please try again!");
+                } else if(event.detail.xhr.status === 500) {
+                    // Handle 500 error
+                    alert("Internal server error occurred!");
+                }
+            });
+        </script>
     </body>
 </html>
