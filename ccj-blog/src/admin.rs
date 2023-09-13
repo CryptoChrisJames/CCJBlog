@@ -1,9 +1,19 @@
-use std::f32::consts::E;
-use rocket::{Error, http::Status};
+use rocket::http::Status;
 use rocket_dyn_templates::{Template, context};
-use bcrypt::{DEFAULT_COST, hash, verify};
+use bcrypt::verify;
 use rocket::form::Form;
 use rusqlite::Connection;
+use jsonwebtoken::{encode, Header, EncodingKey};
+use serde_derive::{Serialize, Deserialize};
+
+static SECRET: &[u8] = b"9fc1ba86-bc6a-4c57-be2c-e5beee07590c";
+
+#[derive(Debug, Serialize, Deserialize)]
+struct Claims {
+    sub: String,  // Subject (often a user ID or username)
+    // You can add more claims here, e.g., roles, permissions, etc.
+}
+
 
 #[derive(FromForm)]
 struct LoginInfo {
