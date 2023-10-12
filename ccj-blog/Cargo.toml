@@ -9,8 +9,7 @@ bcrypt = "0.10"
 rusqlite = { version = "0.29", features = ["bundled"] }
 rusoto_core = "0.45"
 rusoto_dynamodb = "0.45"
-jsonwebtoken = "7.2.0"
-serde_derive = "1.0.188"
+chrono = "0.4"
 
 [dependencies.rocket_dyn_templates]
 version = "=0.1.0-rc.3"

@@ -1,19 +1,9 @@
 use rocket::http::Status;
 use rocket_dyn_templates::{Template, context};
-use bcrypt::verify;
+use bcrypt::{verify, hash, DEFAULT_COST};
 use rocket::form::Form;
 use rusqlite::Connection;
-use jsonwebtoken::{encode, Header, EncodingKey};
-use serde_derive::{Serialize, Deserialize};
-
-static SECRET: &[u8] = b"9fc1ba86-bc6a-4c57-be2c-e5beee07590c";
-
-#[derive(Debug, Serialize, Deserialize)]
-struct Claims {
-    sub: String,  // Subject (often a user ID or username)
-    // You can add more claims here, e.g., roles, permissions, etc.
-}
-
+use chrono::{DateTime, TimeZone, Utc};
 
 #[derive(FromForm)]
 struct LoginInfo {
@@ -45,8 +35,10 @@ pub fn server_issue() -> String {
 pub fn login(login: Form<LoginInfo>) -> Result<Template, Status> {
     let loginInfo = login.into_inner();
     if authenticate(&loginInfo.username, &loginInfo.password) {
+        let session_id = new_session(loginInfo.username.clone());
         let context = context! {
             username: &loginInfo.username,
+            session_id: session_id.unwrap(),
         };
         return Ok(Template::render("admin/dashboard", &context));
     } else {
@@ -119,3 +111,15 @@ fn get_user(username: &String) -> UserResult {
 //         Err(_) => false,
 //     }
 // }
+
+fn new_session(username: String) -> Result<String, Status> {
+    let session_id = hash(&username, DEFAULT_COST).unwrap();
+    let creation_date = Utc::now().to_string();
+    let db = getDb();
+    let mut stmt = db.prepare("INSERT INTO sessions (session_id, user_id, expiry_date) VALUES (?, ?, ?)").unwrap();
+    let result = stmt.execute([session_id.clone(), username, creation_date]);
+    return match result {
+        Ok(_) => core::result::Result::Ok(session_id),
+        Err(_) => Err(rocket::http::Status::InternalServerError),
+    }
+}
