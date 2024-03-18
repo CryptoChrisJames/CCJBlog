@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\CryptoChrisJames\\Documents\\repos\\cryptochrisjames.github.io\\v2\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\CryptoChrisJames\\Documents\\repos\\cryptochrisjames.github.io\\v2\\wwwroot\\pages\\admin\\index.html",
+      "PackagePath": "staticwebassets\\pages\\admin\\index.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.v2.props",
+      "PackagePath": "build\\v2.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.v2.props",
+      "PackagePath": "buildMultiTargeting\\v2.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.v2.props",
+      "PackagePath": "buildTransitive\\v2.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.v2.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

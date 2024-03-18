@@ -1,11 +1,58 @@
 {
   "Version": 1,
-  "Hash": "QYsopG0K0+E766l1g3eV73+UaxPAeqg7kW05Txk4nV8=",
+  "Hash": "Xs2j0TrrHZeZtVWkTzYVMisbWnb8HG7WP1ta1thwPto=",
   "Source": "v2",
   "BasePath": "_content/v2",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "v2\\wwwroot",
+      "Source": "v2",
+      "ContentRoot": "C:\\Users\\CryptoChrisJames\\Documents\\repos\\cryptochrisjames.github.io\\v2\\wwwroot\\",
+      "BasePath": "_content/v2",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\CryptoChrisJames\\Documents\\repos\\cryptochrisjames.github.io\\v2\\wwwroot\\index.html",
+      "SourceId": "v2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\CryptoChrisJames\\Documents\\repos\\cryptochrisjames.github.io\\v2\\wwwroot\\",
+      "BasePath": "_content/v2",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\CryptoChrisJames\\Documents\\repos\\cryptochrisjames.github.io\\v2\\wwwroot\\pages\\admin\\index.html",
+      "SourceId": "v2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\CryptoChrisJames\\Documents\\repos\\cryptochrisjames.github.io\\v2\\wwwroot\\",
+      "BasePath": "_content/v2",
+      "RelativePath": "pages/admin/index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pages\\admin\\index.html"
+    }
+  ]
 }

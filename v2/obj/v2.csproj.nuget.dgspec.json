@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/cryptochrisjames/Documents/repos/cryptochrisjames.github.io/v2/v2.csproj": {}
+    "C:\\Users\\CryptoChrisJames\\Documents\\repos\\cryptochrisjames.github.io\\v2\\v2.csproj": {}
   },
   "projects": {
-    "/Users/cryptochrisjames/Documents/repos/cryptochrisjames.github.io/v2/v2.csproj": {
+    "C:\\Users\\CryptoChrisJames\\Documents\\repos\\cryptochrisjames.github.io\\v2\\v2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/cryptochrisjames/Documents/repos/cryptochrisjames.github.io/v2/v2.csproj",
+        "projectUniqueName": "C:\\Users\\CryptoChrisJames\\Documents\\repos\\cryptochrisjames.github.io\\v2\\v2.csproj",
         "projectName": "v2",
-        "projectPath": "/Users/cryptochrisjames/Documents/repos/cryptochrisjames.github.io/v2/v2.csproj",
-        "packagesPath": "/Users/cryptochrisjames/.nuget/packages/",
-        "outputPath": "/Users/cryptochrisjames/Documents/repos/cryptochrisjames.github.io/v2/obj/",
+        "projectPath": "C:\\Users\\CryptoChrisJames\\Documents\\repos\\cryptochrisjames.github.io\\v2\\v2.csproj",
+        "packagesPath": "C:\\Users\\CryptoChrisJames\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\CryptoChrisJames\\Documents\\repos\\cryptochrisjames.github.io\\v2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/cryptochrisjames/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\CryptoChrisJames\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,7 +63,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
