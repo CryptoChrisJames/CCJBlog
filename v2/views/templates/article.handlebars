@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+<body class="bg-gray-100 text-gray-800">  <!-- Set base background and text colors -->
+    <div class="max-w-4xl mx-auto p-5">  <!-- Center the content and add padding -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">  <!-- Article styling -->
+            <div class="p-6">
+                <h1 class="text-3xl font-bold mb-2">{{title}}</h1>  <!-- Title styling -->
+                <div class="date text-sm text-gray-500 mb-4">{{dateFormat date}}</div>  <!-- Date styling -->
+                <p class="description text-gray-700 text-base">{{description}}</p>  <!-- Description styling -->
+            </div>
+            <div class="p-6">
+                {{{article}}}  <!-- Article content -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

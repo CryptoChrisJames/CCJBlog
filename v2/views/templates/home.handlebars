@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCJ's Blog</title>
+    <style>
+        .blog-list {
+            display: flex;
+            flex-direction: column;
+            margin: 20px;
+        }
+        .blog-item {
+            display: flex;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+        .date {
+            flex-basis: 20%;
+            font-weight: bold;
+        }
+        .details {
+            flex-basis: 80%;
+        }
+        .details h2 {
+            margin: 0 0 5px 0;
+        }
+        .details p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-list">
+        {{#each blogs}}
+        <a href="/article/{{this.id}}" class="article-link">
+            <div class="blog-item">
+                <div class="date">{{dateFormat this.date}}</div>
+                <div class="details">
+                    <h2>{{this.title}}</h2>
+                    <p>{{this.description}}</p>
+                    <p><strong>Category:</strong> {{this.category}}</p>
+                </div>
+            </div>
+        </a>
+        {{/each}}
+    </div>
+</body>
+</html>

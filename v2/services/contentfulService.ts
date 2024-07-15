@@ -1,10 +1,14 @@
 import axios from 'axios';
 import { type BlogListItem } from '../types/blogListItem.ts';
 import { type Blog } from '../types/blog.ts';
+const marked = require('marked');
 
 const spaceId = process.env.CONTENTFUL_SPACE;
 const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
 
+const convertMarkdownToHtml = (markdown: string) => {
+    return marked.parse(markdown);
+};
 
 const getBlogList = async () => {
     const response = await axios.get(
@@ -31,7 +35,7 @@ const getBlogById = async (id: string) => {
         date: blogData.fields.date,
         description: blogData.fields.description,
         category: blogData.fields.category,
-        article: blogData.fields.article,
+        article: convertMarkdownToHtml(blogData.fields.article),
     } as Blog;
     return blog;
 };
