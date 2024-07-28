@@ -13,7 +13,6 @@
         .blog-item {
             display: flex;
             margin-bottom: 10px;
-            border-bottom: 1px solid #ccc;
             padding-bottom: 10px;
         }
         .date {
@@ -36,11 +35,13 @@
         {{#each blogs}}
         <a href="/article/{{this.id}}" class="article-link">
             <div class="blog-item">
-                <div class="date">{{dateFormat this.date}}</div>
+                <div class="date">
+                    {{dateFormat this.date}}
+                    <p><strong>Type :</strong> {{this.category}}</p>
+                </div>
                 <div class="details">
                     <h2>{{this.title}}</h2>
                     <p>{{this.description}}</p>
-                    <p><strong>Category:</strong> {{this.category}}</p>
                 </div>
             </div>
         </a>

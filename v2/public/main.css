@@ -1,3 +1,88 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    body {
+        @apply
+        bg-main
+        font-roboto
+        font-light
+        text-text-color-main
+    }
+    
+    h1 {
+        @apply
+        py-4
+        font-montserrat
+        font-bold
+        text-2xl
+    }
+    
+    h2 {
+        @apply
+        py-1
+        font-montserrat
+        font-bold
+        text-base
+    }
+
+    p code {
+        @apply
+        bg-tertiary
+        px-1
+        text-text-color-secondary
+    }
+
+    code {
+        @apply
+        my-8
+        overflow-scroll
+    }
+
+        /* Styling for ordered lists */
+    ol {
+        @apply list-decimal space-y-2 my-8 px-8;
+    }
+    
+    /* Styling for unordered lists */
+    ul {
+        @apply list-disc pl-10 space-y-2;
+    }
+    
+    /* Common styling for all list items */
+    li {
+        @apply font-medium;
+    }
+
+    blockquote {
+        @apply mx-4 my-8 p-4 md:p-6 text-sm md:text-lg italic font-medium text-text-color-main border-l-8 bg-secondary border-gray-400;
+      }
+
+    .article {
+        @apply 
+        lg:mx-64 md:mx-24 
+        my-8
+    }
+
+    .article a {
+        @apply text-blue-300 visited:text-purple-300
+    }
+
+    .article p {
+        @apply py-2
+    }
+
+    .articleBody h1 {
+        @apply
+        py-4
+        font-montserrat
+        font-bold
+        text-lg
+    }
+
+    .articleHeader {
+        @apply
+        mb-4
+    }
+}

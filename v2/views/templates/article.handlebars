@@ -3,20 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/solarized-dark.min.css">
     <title>{{title}}</title>
 </head>
-<body class="bg-gray-100 text-gray-800">  <!-- Set base background and text colors -->
-    <div class="max-w-4xl mx-auto p-5">  <!-- Center the content and add padding -->
-        <div class="bg-white shadow-lg rounded-lg overflow-hidden">  <!-- Article styling -->
-            <div class="p-6">
-                <h1 class="text-3xl font-bold mb-2">{{title}}</h1>  <!-- Title styling -->
-                <div class="date text-sm text-gray-500 mb-4">{{dateFormat date}}</div>  <!-- Date styling -->
-                <p class="description text-gray-700 text-base">{{description}}</p>  <!-- Description styling -->
+<body>
+    <div class="articleContainter">
+        <div class="article">
+            <div class="articleHeader">
+                <h1>{{title}}</h1>
+                <h2>{{description}}</h2>
+                <p>{{dateFormat date}}</p>
             </div>
-            <div class="p-6">
-                {{{article}}}  <!-- Article content -->
+            <div class="articleBody">
+                {{{article}}}
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </body>
 </html>

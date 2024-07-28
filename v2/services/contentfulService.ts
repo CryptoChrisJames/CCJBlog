@@ -1,7 +1,24 @@
 import axios from 'axios';
 import { type BlogListItem } from '../types/blogListItem.ts';
 import { type Blog } from '../types/blog.ts';
+const highlight = require('highlight.js');
 const marked = require('marked');
+
+marked.setOptions({
+    renderer: new marked.Renderer(),
+    highlight: function(code: any, lang: any) {
+        // Check if the specified language is valid for highlight.js
+        const validLanguage = highlight.getLanguage(lang) ? lang : 'plaintext';
+        return highlight.highlight(validLanguage, code).value;
+    },
+    langPrefix: 'language-', // CSS class prefix
+    pedantic: false,
+    gfm: true,
+    breaks: false,
+    smartLists: true,
+    smartypants: false,
+    xhtml: false
+});
 
 const spaceId = process.env.CONTENTFUL_SPACE;
 const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN;
@@ -29,13 +46,15 @@ const getBlogById = async (id: string) => {
     const response = await axios.get(
         `https://cdn.contentful.com/spaces/${spaceId}/environments/master/entries/${id}?access_token=${accessToken}`);
     const blogData = response.data;
+    const article = blogData.fields.article;
+    const articleHtml = convertMarkdownToHtml(article);
     const blog = {
         id: blogData.sys.id,
         title: blogData.fields.title,
         date: blogData.fields.date,
         description: blogData.fields.description,
         category: blogData.fields.category,
-        article: convertMarkdownToHtml(blogData.fields.article),
+        article: articleHtml,
     } as Blog;
     return blog;
 };
