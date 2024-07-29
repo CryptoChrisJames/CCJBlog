@@ -459,8 +459,8 @@ h1 {
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-family: Montserrat, sans-serif;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
   font-weight: 700;
 }
 
@@ -468,8 +468,8 @@ h2 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   font-family: Montserrat, sans-serif;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
   font-weight: 700;
 }
 
@@ -548,31 +548,11 @@ blockquote {
   color: rgb(232 233 237 / var(--tw-text-opacity));
 }
 
-@media (min-width: 768px) {
-  blockquote {
-    padding: 1.5rem;
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-}
-
 .article {
   margin-top: 2rem;
   margin-bottom: 2rem;
-}
-
-@media (min-width: 768px) {
-  .article {
-    margin-left: 6rem;
-    margin-right: 6rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .article {
-    margin-left: 16rem;
-    margin-right: 16rem;
-  }
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .article a {
@@ -593,9 +573,33 @@ blockquote {
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-family: Montserrat, sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+.articleBody h2 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-family: Montserrat, sans-serif;
   font-size: 1.125rem;
   line-height: 1.75rem;
   font-weight: 700;
+}
+
+.articleBody h3 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-family: Montserrat, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+.articleDate {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-style: italic;
 }
 
 .articleHeader {
