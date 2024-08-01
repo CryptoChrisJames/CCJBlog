@@ -33,6 +33,10 @@
         px-1
         text-text-color-secondary
     }
+    
+    p img {
+        @apply pt-5
+    }
 
     code {
         @apply
@@ -56,13 +60,25 @@
     }
 
     blockquote {
-        @apply mx-4 my-8 p-4 text-sm italic font-medium text-text-color-main border-l-8 bg-secondary border-gray-400;
+        @apply mx-4 my-8 p-4 text-sm italic font-medium text-text-color-main border-l-4 bg-secondary border-gray-400;
       }
 
     .article {
         @apply
         my-8
-        px-8
+        lg:mx-8
+        px-8 sm:px-40 lg:px-64
+        block
+    }
+
+    .article img {
+        @apply
+        m-auto
+    }
+
+    .article em {
+        @apply
+        m-auto
     }
 
     .article a {
@@ -106,5 +122,20 @@
     .articleHeader {
         @apply
         mb-4
+    }
+
+    @screen sm {
+        .article img {
+            width: 80%;
+            height: auto;
+
+        }
+    }
+
+    @screen lg {
+        .article img {
+            width: 65%;
+            height: auto;
+        }
     }
 }

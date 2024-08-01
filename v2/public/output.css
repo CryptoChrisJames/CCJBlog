@@ -482,6 +482,10 @@ p code {
   color: rgb(181 137 0 / var(--tw-text-opacity));
 }
 
+p img {
+  padding-top: 1.25rem;
+}
+
 code {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -534,7 +538,7 @@ blockquote {
   margin-right: 1rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
-  border-left-width: 8px;
+  border-left-width: 4px;
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
   --tw-bg-opacity: 1;
@@ -551,8 +555,33 @@ blockquote {
 .article {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  display: block;
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+@media (min-width: 640px) {
+  .article {
+    padding-left: 10rem;
+    padding-right: 10rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .article {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding-left: 16rem;
+    padding-right: 16rem;
+  }
+}
+
+.article img {
+  margin: auto;
+}
+
+.article em {
+  margin: auto;
 }
 
 .article a {
@@ -604,6 +633,20 @@ blockquote {
 
 .articleHeader {
   margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .article img {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .article img {
+    width: 65%;
+    height: auto;
+  }
 }
 
 *, ::before, ::after {
