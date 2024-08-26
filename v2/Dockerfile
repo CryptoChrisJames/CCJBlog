@@ -1,8 +1,8 @@
 FROM oven/bun:latest
+RUN ls -la
 
 WORKDIR /app
 
-RUN ls -la
 
 COPY package.json .
 
