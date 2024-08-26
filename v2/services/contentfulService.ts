@@ -29,16 +29,20 @@ const convertMarkdownToHtml = (markdown: string) => {
 
 const getBlogList = async () => {
     const response = await axios.get(
-        `https://cdn.contentful.com/spaces/${spaceId}/environments/master/entries?access_token=${accessToken}&select=sys.id,fields.title,fields.date,fields.description,fields.category&content_type=article`);
-    const blogList = response.data.items.map((item: any) => {
-        return {
-            id: item.sys.id,
-            title: item.fields.title,
-            date: item.fields.date,
-            description: item.fields.description,
-            category: item.fields.category,
-        } as BlogListItem;
+        `https://cdn.contentful.com/spaces/${spaceId}/environments/master/entries?access_token=${accessToken}&select=sys.id,fields.title,fields.date,fields.description,fields.category&content_type=article`
+    );
+    const blogList: BlogListItem[] = 
+        response.data.items.map((item: any) => {
+;            return {
+                id: item.sys.id,
+                title: item.fields.title,
+                date: item.fields.date,
+                description: item.fields.description,
+                category: item.fields.category
+            } as BlogListItem;
     });
+    blogList.map((item) => { item.category = item.category.toUpperCase() });
+    blogList.sort((a, b) => new Date(b.date) - new Date(a.date));
     return blogList;
 };
 

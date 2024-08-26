@@ -10,6 +10,12 @@
         font-light
         text-text-color-main
     }
+
+    nav {
+        @apply
+        border-b
+        border-main-separate
+    }
     
     h1 {
         @apply
@@ -124,11 +130,57 @@
         mb-4
     }
 
+    .blogListContainer {
+        @apply
+        p-6
+        m-auto
+    }
+
+    .blogItem {
+        @apply
+        bg-main-separate
+        rounded-t-2xl
+        mb-4
+        mt-2
+    }
+    
+    /* .blogItemContainer {
+        @apply
+        flex
+    } */
+
+    .blogCat {
+        @apply
+        text-center
+        font-bold
+        text-xs
+        text-main
+        rounded-t-full
+    }
+
+    /* .blogCat {
+        writing-mode: vertical-rl;
+    } */
+
+    .blogInfo {
+        @apply
+        ml-2
+    }
+
+    .blogDate {
+        @apply
+        font-bold
+    }
+
     @screen sm {
         .article img {
             width: 80%;
             height: auto;
 
+        }
+
+        .blogListContainer {
+            width: 75%;
         }
     }
 
@@ -136,6 +188,10 @@
         .article img {
             width: 65%;
             height: auto;
+        }
+
+        .blogListContainer {
+            width: 55%;
         }
     }
 }
