@@ -5,11 +5,13 @@
     <link href="/output.css" rel="stylesheet">
     <link href="/fonts.css" rel="stylesheet">
     <script type="text/javascript" src="/util/jquery.js"></script>
+    <script text="text/javascript" src="/util/htmx.js"></script>
+    <script src="https://kit.fontawesome.com/1ab703647c.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     {{> header}}  <!-- Load the header partial -->
     {{{body}}}    <!-- Content from the page template will be injected here -->
-    {{!-- {{> footer}}  <!-- Load the footer partial --> --}}
+    {{> footer}}  <!-- Load the footer partial -->
 </body>
 </html>

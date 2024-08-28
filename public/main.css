@@ -172,6 +172,38 @@
         font-bold
     }
 
+    .filterContainer {
+        @apply
+        flex 
+        justify-center 
+        items-center 
+        gap-4
+        my-6
+    }
+
+    .filterButton {
+        @apply
+        rounded-sm
+        p-2
+        mx-4
+        font-bold
+    }
+
+    .socialsContainer {
+        @apply
+        flex 
+        justify-center 
+        items-center 
+        gap-12
+        my-6
+    }
+
+    .socialIcon {
+        @apply
+        h-10
+        w-auto
+    }
+
     @screen sm {
         .article img {
             width: 80%;

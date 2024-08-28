@@ -1,0 +1,19 @@
+<div class="blogListContainer">
+    {{#each blogs}}
+    <div class="blogItem">
+        <a href="/article/{{this.id}}">
+            <div class="blogItemContainer">
+                <div class="blogCat">
+                    <p>{{this.category}}</p>
+                </div>
+                <div class="blogInfo">
+                    <h2>{{this.title}}</h2>
+                    <p class="blogDate">{{dateFormat this.date}}</p>
+                    <p class="blogDesc">{{this.description}}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    {{/each}}
+</div>
+<script text="text/javascript" src="/js/setCat.js"></script>

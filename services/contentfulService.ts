@@ -41,7 +41,6 @@ const getBlogList = async () => {
                 category: item.fields.category
             } as BlogListItem;
     });
-    blogList.map((item) => { item.category = item.category.toUpperCase() });
     blogList.sort((a, b) => new Date(b.date) - new Date(a.date));
     return blogList;
 };
@@ -63,7 +62,18 @@ const getBlogById = async (id: string) => {
     return blog;
 };
 
+const getFilteredBlogList = async (filter: string) => {
+    if (filter === 'all') {
+        return await getBlogList();
+    }
+    if (!['ent', 'life', 'tech'].includes(filter)) return [];
+    const list: BlogListItem[] = await getBlogList();
+    const filteredList = list.filter((item) => item.category === filter);
+    return filteredList;
+}
+
 export {
     getBlogList,
-    getBlogById
+    getBlogById,
+    getFilteredBlogList,
 };
