@@ -1,23 +1,21 @@
 {
-  "name": "nuxt-app",
-  "private": true,
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
+  "name": "ccj-blog",
+  "module": "server.ts",
+  "type": "module",
   "devDependencies": {
-    "@nuxt/content": "^2.5.2",
-    "@nuxtjs/google-fonts": "^3.0.0",
-    "nuxt": "^3.3.3"
+    "@types/bun": "latest",
+    "tailwindcss": "^3.4.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.0.0",
-    "install": "^0.13.0",
-    "npm": "^9.6.5",
-    "sass": "^1.60.0",
-    "sass-loader": "^13.2.2"
+    "axios": "^1.7.2",
+    "contentful-management": "^11.27.6",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-handlebars": "^7.1.3",
+    "highlight.js": "^11.10.0",
+    "marked": "^13.0.2"
   }
 }

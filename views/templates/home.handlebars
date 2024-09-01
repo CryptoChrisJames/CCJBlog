@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCJ's Blog</title>
+</head>
+<body>
+    <div class="homeContainer">
+        <div class="filterContainer">   
+            <button
+                hx-get="/article/filter/all"
+                hx-trigger="click"
+                hx-target=".blogListContainer"
+                hx-swap="outerHTML"
+                class="filterButton"
+            >
+                ALL
+            </button>
+            <button
+                hx-get="/article/filter/tech"
+                hx-trigger="click"
+                hx-target=".blogListContainer"
+                hx-swap="outerHTML"
+                class="filterButton bg-cat-color-tech text-main"
+            >
+                TECH
+            </button>
+            <button
+                hx-get="/article/filter/ent"
+                hx-trigger="click"
+                hx-target=".blogListContainer"
+                hx-swap="outerHTML"
+                class="filterButton bg-cat-color-ent text-main"
+            >
+                ENT
+            </button>
+               
+            <button
+                hx-get="/article/filter/life"
+                hx-trigger="click"
+                hx-target=".blogListContainer"
+                hx-swap="outerHTML"
+                class="filterButton bg-cat-color-life text-main"
+            >
+                LIFE
+            </button>
+        </div>
+        <div class="blogListContainer">
+            {{#each blogs}}
+            <div class="blogItem">
+                <a href="/article/{{this.id}}">
+                    <div class="blogItemContainer">
+                        <div class="blogCat">
+                            <p>{{this.category}}</p>
+                        </div>
+                        <div class="blogInfo">
+                            <h2>{{this.title}}</h2>
+                            <p class="blogDate">{{dateFormat this.date}}</p>
+                            <p class="blogDesc">{{this.description}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <script text="text/javascript" src="/js/setCat.js"></script>
+</body>
+</html>

@@ -1,0 +1,296 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply
+        bg-main
+        font-roboto
+        font-light
+        text-text-color-main
+        flex
+        flex-col
+        min-h-screen
+    }
+
+    nav {
+        @apply
+        border-b
+        border-main-separate
+    }
+    
+    h1 {
+        @apply
+        py-4
+        font-montserrat
+        font-bold
+        text-3xl
+    }
+    
+    h2 {
+        @apply
+        py-1
+        font-montserrat
+        font-bold
+        text-lg
+    }
+
+    p code {
+        @apply
+        bg-tertiary
+        px-1
+        text-text-color-secondary
+    }
+    
+    p img {
+        @apply pt-5
+    }
+
+    code {
+        @apply
+        my-8
+        overflow-scroll
+    }
+
+        /* Styling for ordered lists */
+    ol {
+        @apply list-decimal space-y-2 my-8 px-8;
+    }
+    
+    /* Styling for unordered lists */
+    ul {
+        @apply list-disc pl-10 space-y-2;
+    }
+    
+    /* Common styling for all list items */
+    li {
+        @apply font-medium;
+    }
+
+    blockquote {
+        @apply mx-4 my-8 p-4 text-sm font-medium text-text-color-main border-l-4 bg-secondary border-gray-400;
+    }
+
+    .mainContent {
+        @apply
+        flex-1
+    }
+
+    .article {
+        @apply
+        my-8
+        lg:mx-8
+        px-8 sm:px-40 lg:px-64
+        block
+    }
+
+    .article img {
+        @apply
+        m-auto
+    }
+
+    .article em {
+        @apply
+        m-auto
+    }
+
+    .article a {
+        @apply text-blue-300 visited:text-purple-300
+    }
+
+    .article p {
+        @apply py-2
+    }
+
+    .articleBody h1 {
+        @apply
+        py-4
+        font-montserrat
+        font-bold
+        text-2xl
+    }
+
+    .articleBody h2 {
+        @apply
+        py-4
+        font-montserrat
+        font-bold
+        text-lg
+    }
+
+    .articleBody h3 {
+        @apply
+        py-4
+        font-montserrat
+        font-bold
+        text-sm
+    }
+
+    .articleDate {
+        @apply
+        text-lg
+    }
+
+    .articleHeader {
+        @apply
+        mb-4
+    }
+
+    .blogListContainer {
+        @apply
+        p-6
+        m-auto
+    }
+
+    .blogItem {
+        @apply
+        bg-main-separate
+        rounded-t-2xl
+        mb-4
+        mt-2
+    }
+    
+    /* .blogItemContainer {
+        @apply
+        flex
+    } */
+
+    .blogCat {
+        @apply
+        text-center
+        font-bold
+        text-xs
+        text-main
+        rounded-t-full
+    }
+
+    /* .blogCat {
+        writing-mode: vertical-rl;
+    } */
+
+    .blogInfo {
+        @apply
+        ml-2
+    }
+
+    .blogDate {
+        @apply
+        font-bold
+    }
+
+    .filterContainer {
+        @apply
+        flex 
+        justify-center 
+        items-center 
+        gap-4
+        my-6
+    }
+
+    .filterButton {
+        @apply
+        rounded-sm
+        p-2
+        mx-4
+        font-bold
+    }
+
+    .socialsContainer {
+        @apply
+        flex 
+        justify-center 
+        items-center 
+        gap-12
+        my-6
+    }
+
+    .socialIcon {
+        @apply
+        h-10
+        w-auto
+    }
+
+    .aboutContent {
+        @apply
+        flex
+        flex-col
+        px-8
+        items-center
+    }
+
+    .aboutContent img{
+        @apply
+        w-auto
+        h-64
+    }
+
+    .aboutContent p {
+        @apply 
+        mx-6
+        my-4
+    }
+
+    .aboutContent a {
+        @apply
+        text-blue-300 
+        visited:text-purple-300
+    }
+
+    @screen sm {
+        .article img {
+            width: 80%;
+            height: auto;
+
+        }
+
+        .blogListContainer {
+            width: 75%;
+        }
+
+        .aboutContent {
+            @apply
+            px-16
+        }
+    
+        .aboutContent img{
+            @apply
+            w-auto
+            h-64
+        }
+    
+        .aboutContent p {
+            @apply 
+            mx-12
+            my-6
+        }
+    }
+
+    @screen lg {
+        .article img {
+            width: 65%;
+            height: auto;
+        }
+
+        .blogListContainer {
+            width: 55%;
+        }
+
+        .aboutContent {
+            @apply
+            px-24
+        }
+    
+        .aboutContent img{
+            @apply
+            w-auto
+            h-64
+        }
+    
+        .aboutContent p {
+            @apply 
+            mx-48
+            my-6
+        }
+    }
+}
