@@ -57,6 +57,8 @@ const getBlogById = async (id: string) => {
         date: blogData.fields.date,
         description: blogData.fields.description,
         category: blogData.fields.category,
+        imageUrl: blogData.fields.seoImage,
+        keywords: blogData.fields.keywords,
         article: articleHtml,
     } as Blog;
     return blog;

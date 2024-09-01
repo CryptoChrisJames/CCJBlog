@@ -9,6 +9,9 @@
         font-roboto
         font-light
         text-text-color-main
+        flex
+        flex-col
+        min-h-screen
     }
 
     nav {
@@ -66,8 +69,13 @@
     }
 
     blockquote {
-        @apply mx-4 my-8 p-4 text-sm italic font-medium text-text-color-main border-l-4 bg-secondary border-gray-400;
-      }
+        @apply mx-4 my-8 p-4 text-sm font-medium text-text-color-main border-l-4 bg-secondary border-gray-400;
+    }
+
+    .mainContent {
+        @apply
+        flex-1
+    }
 
     .article {
         @apply
@@ -122,7 +130,6 @@
     .articleDate {
         @apply
         text-lg
-        italic
     }
 
     .articleHeader {
@@ -204,6 +211,32 @@
         w-auto
     }
 
+    .aboutContent {
+        @apply
+        flex
+        flex-col
+        px-8
+        items-center
+    }
+
+    .aboutContent img{
+        @apply
+        w-auto
+        h-64
+    }
+
+    .aboutContent p {
+        @apply 
+        mx-6
+        my-4
+    }
+
+    .aboutContent a {
+        @apply
+        text-blue-300 
+        visited:text-purple-300
+    }
+
     @screen sm {
         .article img {
             width: 80%;
@@ -213,6 +246,23 @@
 
         .blogListContainer {
             width: 75%;
+        }
+
+        .aboutContent {
+            @apply
+            px-16
+        }
+    
+        .aboutContent img{
+            @apply
+            w-auto
+            h-64
+        }
+    
+        .aboutContent p {
+            @apply 
+            mx-12
+            my-6
         }
     }
 
@@ -224,6 +274,23 @@
 
         .blogListContainer {
             width: 55%;
+        }
+
+        .aboutContent {
+            @apply
+            px-24
+        }
+    
+        .aboutContent img{
+            @apply
+            w-auto
+            h-64
+        }
+    
+        .aboutContent p {
+            @apply 
+            mx-48
+            my-6
         }
     }
 }

@@ -5,4 +5,6 @@ export type Blog = {
     description: string;
     category: string;
     article: string;
+    imageUrl: string;
+    keywords: string;
 };

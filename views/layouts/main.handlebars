@@ -1,17 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>{{title}}</title>
+    <title>{{pageTitle}}</title>
     <link href="/output.css" rel="stylesheet">
     <link href="/fonts.css" rel="stylesheet">
     <script type="text/javascript" src="/util/jquery.js"></script>
     <script text="text/javascript" src="/util/htmx.js"></script>
     <script src="https://kit.fontawesome.com/1ab703647c.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{pageDescription}}">
+    <meta name="keywords" content="{{pageKeywords}}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{pageUrl}}">
+    <meta property="og:title" content="{{pageTitle}}">
+    <meta property="og:description" content="{{pageDescription}}">
+    <meta property="og:image" content="{{pageImage}}">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{pageUrl}}">
+    <meta property="twitter:title" content="{{pageTitle}}">
+    <meta property="twitter:description" content="{{pageDescription}}">
+    <meta property="twitter:image" content="{{pageImage}}">
 </head>
 <body>
     {{> header}}  <!-- Load the header partial -->
-    {{{body}}}    <!-- Content from the page template will be injected here -->
+    <div class="mainContent">
+        {{{body}}}    <!-- Content from the page template will be injected here -->
+    </div>
     {{> footer}}  <!-- Load the footer partial -->
 </body>
 </html>

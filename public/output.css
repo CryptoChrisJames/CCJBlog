@@ -447,6 +447,9 @@ video {
 }
 
 body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   --tw-bg-opacity: 1;
   background-color: rgb(13 23 28 / var(--tw-bg-opacity));
   font-family: Roboto Flex, sans-serif;
@@ -553,9 +556,12 @@ blockquote {
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 500;
-  font-style: italic;
   --tw-text-opacity: 1;
   color: rgb(232 233 237 / var(--tw-text-opacity));
+}
+
+.mainContent {
+  flex: 1 1 0%;
 }
 
 .article {
@@ -634,7 +640,6 @@ blockquote {
 .articleDate {
   font-size: 1.125rem;
   line-height: 1.75rem;
-  font-style: italic;
 }
 
 .articleHeader {
@@ -714,6 +719,35 @@ blockquote {
   width: auto;
 }
 
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.aboutContent img {
+  height: 16rem;
+  width: auto;
+}
+
+.aboutContent p {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.aboutContent a {
+  --tw-text-opacity: 1;
+  color: rgb(147 197 253 / var(--tw-text-opacity));
+}
+
+.aboutContent a:visited {
+  color: rgb(216 180 254 );
+}
+
 @media (min-width: 640px) {
   .article img {
     width: 80%;
@@ -722,6 +756,23 @@ blockquote {
 
   .blogListContainer {
     width: 75%;
+  }
+
+  .aboutContent {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .aboutContent img {
+    height: 16rem;
+    width: auto;
+  }
+
+  .aboutContent p {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -733,6 +784,23 @@ blockquote {
 
   .blogListContainer {
     width: 55%;
+  }
+
+  .aboutContent {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .aboutContent img {
+    height: 16rem;
+    width: auto;
+  }
+
+  .aboutContent p {
+    margin-left: 12rem;
+    margin-right: 12rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -877,14 +945,6 @@ blockquote {
   margin-right: auto;
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
-}
-
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -992,6 +1052,11 @@ blockquote {
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .font-medium {
